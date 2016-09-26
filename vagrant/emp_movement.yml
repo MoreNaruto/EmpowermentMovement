@@ -2,3 +2,4 @@
 - hosts: server
   roles:
    - ansible-java8-oracle
+   - ansible-role-mysql
