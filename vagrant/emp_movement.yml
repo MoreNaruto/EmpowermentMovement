@@ -1,12 +1,4 @@
-  - hosts: master
-    roles:
-     - {role: mysql, mysql_db: [{name: emp_movement_1}, {name: emp_movement_2}],
-                     mysql_users: [{name: tmorris, pass: foobar, priv: "*.*:ALL"},
-                                   {name: athoms2, pass: foo, priv: "*.*:ALL"}],
-                     mysql_db_id: 1 }
-
-  - hosts: slave
-    roles:
-     - {role: mysql, mysql_db: none, mysql_users: none,
-              mysql_repl_role: slave, mysql_repl_master: emp_movement_1_repl,
-              mysql_db_id: 2, mysql_repl_user: [{name: anonUser, pass: foobar}] }
+---
+- hosts: server
+  roles:
+   - ansible-java8-oracle
