@@ -9,7 +9,7 @@ allow for guidance.
 
 ```
 brew install gradle (currently using 3.1)
-sdk install grade <version> (if system GRADLE_HOME variable is not defined)
+sdk install gradle <version> (if system GRADLE_HOME variable is not defined)
 ```
 
 ## Compiling codebase with gradle
