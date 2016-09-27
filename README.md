@@ -16,5 +16,5 @@ sdk install grade <version> (if system GRADLE_HOME variable is not defined)
 
 ```
 gradle clean
-gralde assemble
+gradle assemble
 ```
