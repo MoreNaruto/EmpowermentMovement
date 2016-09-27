@@ -1,0 +1,14 @@
+{
+  "name": "emp_movement",
+  "description": "The empowerment movement front end app",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angular/angular.js.git"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "^1.5.8",
+    "gulp-install": "^0.6.0"
+  }
+}
