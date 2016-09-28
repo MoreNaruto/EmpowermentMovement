@@ -23,7 +23,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src('js/*.js')
+    return gulp.src('./js/*.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist'))
         .pipe(rename('all.min.js'))
@@ -57,10 +57,10 @@ gulp.task('connect', function (){
 });
 
 gulp.task('browserify', function(){
-    return browserify('./js/app.js')
+    return browserify('/js/app.js')
     .bundle()
     .pipe(source('main.js'))
     .pipe(gulp.dest('dist/js'))
 })
 
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'test', 'test-cont', 'browserify']);
+gulp.task('default', ['lint', 'sass',  'browserify', 'scripts', 'watch', 'test', 'test-cont']);
