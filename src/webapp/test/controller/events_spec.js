@@ -1,9 +1,17 @@
-describe ('EventController', function() {
-	beforeEach(module('empowermentMovement.eventController'));
+"use strict";
 
-	var $controller;
+describe ('EmpowermentMovement.EventController', function() {
+	var eventController;
 
-	beforeEach(inject(function(_$controller_){
-		$controller = _$controller_;
-	}));
+	beforeEach(module('EmpowermentMovement.EventController'));
+  	beforeEach(inject(function($injector) {
+    	eventController = $injector.get("EmpowermentMovement.EventController");
+  	}));
+
+  	describe("getAnEvent()"), function () {
+  		it("should return an event", function (){
+  			expect(eventController.getEvent()).toEqual(true);
+  		})
+  	}
+
 })

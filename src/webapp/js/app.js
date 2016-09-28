@@ -1,6 +1,7 @@
-'use strict';
+require('angular')
+var EventController = require('./controller/events')
 
-angular.module(
-    'empowermentMovement', [
-    'empowermentMovement.eventController'
-]);
+var app = angular.module('EmpowermentMovement', [])
+
+app
+	.controller('EventController', ['$scope', EventController])

@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module(
-    'empowermentMovement', [
-    'empowermentMovement.eventController'
+    'EmpowermentMovement', [
+    'EmpowermentMovement.EventController'
 ]);

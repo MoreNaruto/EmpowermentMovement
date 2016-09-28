@@ -1,4 +1,4 @@
-var eventController = angular.module('empowermentMovement.eventController', []);
+var eventController = angular.module('EmpowermentMovement', []);
 
 eventController
 	.controller('EventController', function($scope) {
