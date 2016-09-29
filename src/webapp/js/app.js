@@ -1,7 +1,7 @@
 var EventController = require('./controller/events.js');
 
 var app = angular.module('EmpowermentMovement', [
-	'EmpowermentMovement.EventController'
+	'empowermentMovement.eventController'
 	]);
 
 app

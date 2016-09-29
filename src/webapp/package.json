@@ -7,7 +7,8 @@
     "url": "https://github.com/angular/angular.js.git"
   },
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "upgrade": "browserify js/**/*.js test/**/*.js -o bundle.js"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.8",

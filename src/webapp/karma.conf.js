@@ -3,15 +3,16 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     frameworks: ['jasmine', 'browserify'],
     preprocessors: {
-    	'./test/**/*.spec.js': [ 'browserify' ],
+    	'./test/**/*_spec.js': [ 'browserify' ],
     	'./js/**/*.js': [ 'browserify' ]
     },
     files: [
       './node_modules/angular/angular.js',
       './node_modules/angular-mocks/angular-mocks.js',
       './js/**/*.js',
-      './test/**/*.spec.js'
+      './test/**/*_spec.js'
     ],
+    reporters: ['progress'],
     autoWatch: true,
     browserify: {
     	watch: true,

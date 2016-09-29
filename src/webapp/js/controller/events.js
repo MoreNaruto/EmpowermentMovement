@@ -1,7 +1,7 @@
-var eventController = angular.module('EmpowermentMovement.EventController', []);
+var eventController = angular.module('empowermentMovement.eventController', []);
 
 eventController
 	.controller('EventController', function($scope) {
-		return true;
+		$scope.value = true;
 	}
 );

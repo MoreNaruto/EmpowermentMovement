@@ -1,16 +1,11 @@
-require('../webapp/js/controller/events.js')
+describe ('EventController', function() {
+	beforeEach(angular.mock.module('EmpowermentMovement'));
 
-describe ('EmpowermentMovement.EventController', function() {
-	var eventController;
+  var $controller;
 
-	beforeEach(module('EmpowermentMovement.EventController'));
-	beforeEach(inject(function($injector) {
-  	eventController = $injector.get("EmpowermentMovement.EventController");
-	}));
-
-	describe("getAnEvent()"), function () {
-		it("should return an event", function (){
-			expect(eventController.getEvent()).toEqual(true);
-		});
-	}
+	it('should return true', inject(['EventController',
+    function(EventController) {
+      expect(EventController.value).toEqual(true);
+    }]) 
+	);
 });
