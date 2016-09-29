@@ -57,10 +57,10 @@ gulp.task('connect', function (){
 });
 
 gulp.task('browserify', function(){
-    return browserify('/js/app.js')
+    return browserify('js/app.js')
     .bundle()
     .pipe(source('main.js'))
     .pipe(gulp.dest('dist/js'))
 })
 
-gulp.task('default', ['lint', 'sass',  'browserify', 'scripts', 'watch', 'test', 'test-cont']);
+gulp.task('default', ['lint', 'sass', 'browserify', 'scripts', 'watch', 'test', 'test-cont']);

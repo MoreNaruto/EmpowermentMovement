@@ -1,17 +1,16 @@
-"use strict";
+require('../webapp/js/controller/events.js')
 
 describe ('EmpowermentMovement.EventController', function() {
 	var eventController;
 
 	beforeEach(module('EmpowermentMovement.EventController'));
-  	beforeEach(inject(function($injector) {
-    	eventController = $injector.get("EmpowermentMovement.EventController");
-  	}));
+	beforeEach(inject(function($injector) {
+  	eventController = $injector.get("EmpowermentMovement.EventController");
+	}));
 
-  	describe("getAnEvent()"), function () {
-  		it("should return an event", function (){
-  			expect(eventController.getEvent()).toEqual(true);
-  		})
-  	}
-
-})
+	describe("getAnEvent()"), function () {
+		it("should return an event", function (){
+			expect(eventController.getEvent()).toEqual(true);
+		});
+	}
+});
