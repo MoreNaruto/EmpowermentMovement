@@ -1,7 +1,6 @@
-require('angular');
-var EventController = require('./controller/events');
+var EventController = require('./controller/events.js');
 
-var app = angular.module('EmpowermentMovement', [])
+var app = angular.module('EmpowermentMovement', []);
 
 app
-	.controller('EventController', ['$scope', EventController])
+	.controller('EventController', ['$scope', EventController]);

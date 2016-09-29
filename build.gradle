@@ -1,6 +1,5 @@
 apply plugin: "java"
 group = 'com.empowermentapp'
-archivesBaseName = "event"
 version = '1.0-FINAL'
 
 repositories {
