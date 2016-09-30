@@ -5,7 +5,6 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
-var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 
 var Server = require('karma').Server;
@@ -32,7 +31,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('js/**/*.js', ['lint', 'scripts', 'browserify']);
+    gulp.watch('js/**/*.js', ['lint', 'scripts']);
     gulp.watch('scss/**/*.scss', ['sass']);
 });
 
@@ -56,11 +55,4 @@ gulp.task('connect', function (){
     })
 });
 
-gulp.task('browserify', function(){
-    return browserify('js/app.js')
-    .bundle()
-    .pipe(source('main.js'))
-    .pipe(gulp.dest('dist/js'))
-})
-
-gulp.task('default', ['lint', 'sass', 'browserify', 'scripts', 'watch', 'test', 'test-cont']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'test', 'test-cont']);
