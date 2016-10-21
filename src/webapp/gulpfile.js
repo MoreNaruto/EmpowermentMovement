@@ -5,6 +5,8 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
+var eslint = require('gulp-eslint');
+var babel = require('gulp-babel');
 var source = require('vinyl-source-stream');
 
 var Server = require('karma').Server;
@@ -21,18 +23,34 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('scripts', function() {
-    return gulp.src('./js/*.js')
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist'))
-        .pipe(rename('all.min.js'))
-        .pipe(uglify())
+gulp.task('babel', function() {
+    return gulp.src('./js/*.jsx')
+        .pipe(babel({
+            plugins: ['transform-react-jsx']
+        }))
         .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('watch', function() {
     gulp.watch('js/**/*.js', ['lint', 'scripts']);
     gulp.watch('scss/**/*.scss', ['sass']);
+});
+
+gulp.task('browserify', function(){
+
+});
+
+gulp.task('eslint', function() {
+    return gulp.src('./js/*.jsx')
+        .pipe(eslint({
+            baseConfig: {
+                "ecmaFeatures": {
+                    "jsx": true
+                }
+            }
+        }))
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
 });
 
 gulp.task('test', function(run) {
@@ -55,4 +73,4 @@ gulp.task('connect', function (){
     })
 });
 
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'test', 'test-cont']);
+gulp.task('default', ['lint', 'sass', 'babel', 'watch', 'eslint']);

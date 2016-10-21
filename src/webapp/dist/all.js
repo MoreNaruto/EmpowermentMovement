@@ -1,6 +1,22 @@
-var EventController = require('./controller/events.js');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var app = angular.module('EmpowermentMovement', []);
+var EmpowermentApp = React.createClass({
+	getInitialState: function(){
+		return {
+			name: "EmpowermentMovement"
+		}
+	},
+	componentWillMount: function(){
+		this.setState({name: this.state.name})
+	},
+	render: function() {
+		var name = this.state.name;
+		return (
+			<h1>Title: {name}</h1>
+		);
+	}
 
-app
-	.controller('EventController', ['$scope', EventController]);
+});
+
+ReactDOM.render(<EmpowermentApp/>, document.getElementById('empowerment'));
